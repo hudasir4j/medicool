@@ -2,14 +2,20 @@ body {
   padding: 0;
   margin: 0;
 }
-.container {
-  position: relative;
-  margin-top: 100px;
+
+.hero {
+  font-family: "Coco Gothic";
+  color: #68aab9;
+  font-size: 13vw;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
-.container img {
-  display: block;
-  width: 100%;
-}
+
 nav {
   position: fixed;
   z-index: 10;
@@ -18,7 +24,7 @@ nav {
   top: 0;
   font-family: "coco gothic", sans-serif;
   padding: 0 5%;
-  height: 100px;
+  height: 60px;
   background-color: #82d2e3;
 }
 nav .logo {
@@ -90,7 +96,7 @@ nav .icon-burger .line {
     z-index: 9;
     left: 0;
     right: 0;
-    top: 100px;
+    top: 60px;
     bottom: 100%;
     width: auto;
     height: auto;

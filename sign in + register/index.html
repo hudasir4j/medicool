@@ -4,10 +4,195 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <link rel="stylesheet" href="style.css">
+    <title> sign up | register</title>
+
 </head>
 <body>
+
+    <nav>
+        <input id="nav-toggle" type="checkbox">
+        <div class="logo"><strong>Medi</strong> Verse</div>
+        <ul class="links">
+            <li><a href="../index.html" >Home</a></li>
+            <li><a href="#about" class="is-active">Login</a></li>
+        </ul>
+        <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+
+        <!--styling navbar-->
+        
+        <style>
+            nav {
+                position: fixed;
+                z-index: 10;
+                left: 0;
+                right: 0;
+                top: 0;
+                font-family: "coco gothic", sans-serif;
+                padding: 0 5%;
+                height: 60px;
+                background-color: #82d2e3;
+            }
+            nav .logo {
+                float: left;
+                width: 40%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 24px;
+                color: #fff;
+            }
+            nav .links {
+                float: right;
+                padding: 0;
+                margin: 0;
+                width: 20%;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            nav .links li {
+            list-style: none;
+            }
+                nav .links a {
+                display: block;
+                padding: 1em;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 20px;
+                transition: 0.4s;
+            }
+
+            nav .links a:hover,
+            nav .links a.is-active {
+            background-color: #68aab9;
+            }
+
+                #nav-toggle {
+                position: absolute;
+                top: -100px;
+            }
+            nav .icon-burger {
+                display: none;
+                position: absolute;
+                right: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+                nav .icon-burger .line {
+                width: 30px;
+                height: 5px;
+                background-color: #fff;
+                margin: 5px;
+                border-radius: 3px;
+                transition: all 0.3s ease-in-out;
+            }
+            @media screen and (max-width: 768px) {
+            nav .logo {
+                    float: none;
+                    width: auto;
+                    justify-content: center;
+            }
+            nav .links {
+                    float: none;
+                    position: fixed;
+                    z-index: 9;
+                    left: 0;
+                    right: 0;
+                    top: 60px;
+                    bottom: 100%;
+                    width: auto;
+                    height: auto;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    background-color: rgb(47, 39, 39);
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    transition: all 0.5s ease-in-out;
+            }
+
+            nav .links a {
+                    font-size: 20px;
+                    border-radius: 100px;
+                    transition: 0.4s;
+            }
+
+            nav :checked ~ .links {
+                    bottom: 0;
+            }
+            nav .icon-burger {
+                    display: block;
+            }
+            nav :checked ~ .icon-burger .line:nth-child(1) {
+                transform: translateY(10px) rotate(225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(3) {
+                transform: translateY(-10px) rotate(-225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(2) {
+                opacity: 0;
+            }
+            }
+
+        </style>
+    </nav>
     
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" auto focus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <button class="form__button" type="submit">Continue</button>
+
+            <p class="form__text">
+                <a href="#" class="form__link">Forgot your password?</a>
+            </p>
+            <p class="form__text">
+                <a href = "#" class="form__link" id="linkCreateAccount">Don't have an account? Create one.</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="signupUsername" autofocus placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirm Password">
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <button class="form__button" type="submit">Continue</button>
+
+            <p class="form__text">
+                <a href = "#" class="form__link" id="linkLogin">Already have an account? Login.</a>
+            </p>
+        </form>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
