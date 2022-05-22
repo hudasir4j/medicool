@@ -1,4 +1,6 @@
+
 function setFormMessage(formElement, type, message){
+
     const messageElement = formElement.querySelector(".form__message");
 
 
@@ -8,7 +10,7 @@ function setFormMessage(formElement, type, message){
 }
 
 function clearInputError(inputElement){
-    inputElement.classList.remove("form__inout--error");
+    inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = ""
 }
 
@@ -37,11 +39,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
     loginForm.addEventListener("submit", e =>{
         e.preventDefault();
 
+            window.location.href = "../resources/index.html"
+            console.log("pop");
+        
+        
         //preform AJAX/fetch login
 
-        setFormMessage(loginForm,"error","Invalid username/password.")
     });
 
+    createAccountForm.addEventListener("submit", e =>{
+
+            window.location.href = "../resources/index.html"
+
+    })
     document.querySelectorAll(".form__input").forEach (inputElement => {
         inputElement.addEventListener("blur", e =>{
             if (e.target.id === "signupUsername"&& e.target.value.length>0 && e.target.value.length<10){
